@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"  style="width: 25%; height: auto;">
+	<title>Complete</title>
+
+	
+</head>
+  <body style="text-align: center;">
+  <h2>Upload complete!</h2>
+  
+  {% for image_name in image_names %}
+    <div>
+      <img src="{{url_for('send_processed_image', filename=image_name, selected_style=selected_style)}}", style="max-width: 25%; height: auto;">
+      <img src="{{url_for('send_original_image', filename=image_name)}}", style="max-width: 25%; height: auto;">
+    </div>
+  {% endfor %}
+
+  <hr>
+
+  </body>
+</html>
